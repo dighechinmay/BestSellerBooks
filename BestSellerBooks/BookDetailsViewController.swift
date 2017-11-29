@@ -30,7 +30,9 @@ class BookDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       
+        self.navigationItem.hidesBackButton = true
+        let newBackButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(BookDetailsViewController.back(sender:)))
+        self.navigationItem.leftBarButtonItem = newBackButton
         
         bookCover.sd_setImage(with: URL(string: self.imageURL), completed: nil)
         bookTitleLabel.text = self.book_title
@@ -50,6 +52,13 @@ class BookDetailsViewController: UIViewController {
        
         
         
+    }
+    
+    @objc func back(sender: UIBarButtonItem) {
+        
+        let vC =
+        
+        _ = navigationController?.popToRootViewController(animated: true)
     }
 
     

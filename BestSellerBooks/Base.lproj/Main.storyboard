@@ -194,10 +194,10 @@
             </objects>
             <point key="canvasLocation" x="1222" y="126"/>
         </scene>
-        <!--book_details-->
+        <!--BestSellerBooks-->
         <scene sceneID="Hgy-Cr-nCc">
             <objects>
-                <viewController storyboardIdentifier="book" title="book_details" useStoryboardIdentifierAsRestorationIdentifier="YES" id="GMU-gu-f4Z" customClass="BookDetailsViewController" customModule="BestSellerBooks" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="book" title="BestSellerBooks" useStoryboardIdentifierAsRestorationIdentifier="YES" id="GMU-gu-f4Z" customClass="BookDetailsViewController" customModule="BestSellerBooks" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kba-Md-aL1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -331,7 +331,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c2V-5U-AqP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-332" y="126"/>
+            <point key="canvasLocation" x="-638" y="125"/>
         </scene>
     </scenes>
 </document>

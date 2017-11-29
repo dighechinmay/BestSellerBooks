@@ -140,7 +140,7 @@ class BookAPI {
                     if let isbn = bookIsbn[0]["isbn10"] {
                         
                         self._isbn = isbn
-                        //print(self._isbn)
+                     
                     }
                     
                     
@@ -179,21 +179,21 @@ class BookAPI {
                     if let book_title = bookDetails[0]["title"] as? String {
                         
                         self._bookTitle = book_title
-                       // print(self._bookTitle)
+                       
                         
                     }
                     
                     if let descrip = bookDetails[0]["description"] as? String{
                         
                         self._description = descrip
-                       // print(self._description)
+                      
                         
                     }
                     
                     if let book_author = bookDetails[0]["author"] as? String{
                         
                         self._author = book_author
-                        //print(self._author)
+                       
                     }
      
                     
@@ -206,7 +206,7 @@ class BookAPI {
                     if let rev_link = reviews[0]["book_review_link"] as? String {
                         
                             self._nytimesURL = rev_link
-                            print(_nytimesURL)
+                        
                         
                     }
                     

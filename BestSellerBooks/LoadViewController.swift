@@ -24,8 +24,9 @@ class LoadViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //let backButton = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: navigationController, action: nil)
-       // navigationItem.leftBarButtonItem = backButton
+        self.navigationItem.hidesBackButton = true
+        let newBackButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: nil)
+        self.navigationItem.leftBarButtonItem = newBackButton
         
         downloadBookCover()
 
