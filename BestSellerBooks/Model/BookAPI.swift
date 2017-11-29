@@ -19,6 +19,7 @@ class BookAPI {
     var _isbn: String!
     var _bookCoverURL: String!
     var _rank: Int!
+    var _weekOnList: Int!
     
     var book: BookDetailModel!
     
@@ -78,7 +79,23 @@ class BookAPI {
     
     var rank: Int {
         
+        if _rank == nil{
+            
+            return 0;
+        }
+        
         return _rank
+    }
+    
+    var weekOnList: Int {
+        
+        if _weekOnList == nil {
+            
+            return 0
+            
+        }
+        
+            return _weekOnList
         
     }
     
@@ -97,7 +114,7 @@ class BookAPI {
                     if let isbn = bookIsbn[0]["isbn10"] {
                         
                         self._isbn = isbn
-                        print(self._isbn)
+                        //print(self._isbn)
                     }
                     
                     
@@ -108,6 +125,14 @@ class BookAPI {
                     
                     
                         self._rank = rank 
+                    
+                    
+                }
+                
+                if let wol = result["weeks_on_list"] as? Int {
+                    
+                    
+                    self._weekOnList = wol
                     
                     
                 }

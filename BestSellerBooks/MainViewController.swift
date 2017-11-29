@@ -13,11 +13,14 @@ class MainViewController: UIViewController,UITableViewDataSource,UITableViewDele
     
     
     @IBOutlet weak var bookListTableView: UITableView!
+    @IBOutlet weak var Controller: UISegmentedControl!
     
 
 
     var bookData: BookDetailModel!
     var bookArray = [BookDetailModel]()
+    var bookArray1 = [BookDetailModel]()
+    var flag = true
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +29,7 @@ class MainViewController: UIViewController,UITableViewDataSource,UITableViewDele
         bookListTableView.delegate = self 
        
         downloadBookData()
+       
 
         
     }
@@ -65,7 +69,10 @@ class MainViewController: UIViewController,UITableViewDataSource,UITableViewDele
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+      
         return bookArray.count
+        
     }
     
     
@@ -73,21 +80,46 @@ class MainViewController: UIViewController,UITableViewDataSource,UITableViewDele
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         
-       if let cell = tableView.dequeueReusableCell(withIdentifier: "bookCell", for: indexPath) as? BookTableViewCell {
         
-        let book = self.bookArray[indexPath.row]
+        if(flag) {
         
-        cell.configureBookCell(author: book.authorName,title: book.bookName,rank: book.rank)
-      
-        return cell
+               if let cell = tableView.dequeueReusableCell(withIdentifier: "bookCell", for: indexPath) as? BookTableViewCell {
+                
+                let book = self.bookArray[indexPath.row]
+                
+                cell.configureBookCell(author: book.authorName,title: book.bookName,rank: book.rank,flag: flag,wol: book.wol)
+              
+                return cell
+                
+                }
+                else {
+                
+                    return BookTableViewCell()
+                
+                }
             
         }
         else {
             
-            return BookTableViewCell()
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "bookCell", for: indexPath) as? BookTableViewCell {
+                
+                let book = self.bookArray[indexPath.row]
+                
+                cell.configureBookCell(author: book.authorName,title: book.bookName,rank: book.rank,flag: flag,wol: book.wol)
+                
+                return cell
+                
+            }
+            else {
+                
+                return BookTableViewCell()
+                
+            }
+            
+            
+            
             
         }
-        
         
         
     }
@@ -133,6 +165,31 @@ class MainViewController: UIViewController,UITableViewDataSource,UITableViewDele
     
     
     
+    @IBAction func changeBookd(_ sender: Any) {
+        
+        
+        if Controller.selectedSegmentIndex == 0 {
+            
+                // show books rank wise
+                self.flag = true
+                self.bookListTableView.reloadData()
+            
+        }
+        if Controller.selectedSegmentIndex == 1 {
+            
+                self.flag = false
+                self.bookListTableView.reloadData()
+            
+            
+        }
+        
+        
+    }
+    
+    
+    
+    
+    
     
     
     
@@ -153,7 +210,7 @@ class MainViewController: UIViewController,UITableViewDataSource,UITableViewDele
                                for book in results {
                                 
                                         let oneBook = BookAPI(bookDetails: book)
-                                let bookVar = BookDetailModel(bName: oneBook.bookTitle, aName: oneBook.author,rank: oneBook.rank,isbn: oneBook.isbn,des: oneBook.description)
+                                let bookVar = BookDetailModel(bName: oneBook.bookTitle, aName: oneBook.author,rank: oneBook.rank,isbn: oneBook.isbn,des: oneBook.description,wol: oneBook.weekOnList)
                                         self.bookArray.append(bookVar)
                                         self.bookListTableView.reloadData()
                                 
@@ -163,7 +220,7 @@ class MainViewController: UIViewController,UITableViewDataSource,UITableViewDele
                     
                       }
                     
-
+                  
         }
         
     }
