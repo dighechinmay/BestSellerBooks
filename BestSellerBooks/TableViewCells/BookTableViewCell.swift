@@ -17,7 +17,7 @@ class BookTableViewCell: UITableViewCell {
     
     
     
-    func configureBookCell(author: String,title: String,rank: Int,imageURL: String){
+    func configureBookCell(author: String,title: String,rank: Int){
         
         
                     bookTitleLabel.text = title

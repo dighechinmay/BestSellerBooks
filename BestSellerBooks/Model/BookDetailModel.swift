@@ -18,15 +18,17 @@ class BookDetailModel {
     var authorName: String!
     var image: String!
     var rank: Int!
+    var isbn: String!
+    var description: String!
     
     
-    init(bName: String,aName: String!,rank: Int,image: String!){
+    init(bName: String,aName: String!,rank: Int,isbn: String,des: String){
         
             self.bookName = bName
             self.authorName = aName
-            self.image = image
+            self.isbn = isbn
             self.rank = rank
-        
+            self.description = des
     }
     
     

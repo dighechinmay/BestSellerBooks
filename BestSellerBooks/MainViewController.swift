@@ -77,7 +77,7 @@ class MainViewController: UIViewController,UITableViewDataSource,UITableViewDele
         
         let book = self.bookArray[indexPath.row]
         
-        cell.configureBookCell(author: book.authorName,title: book.bookName,rank: book.rank,imageURL: "")
+        cell.configureBookCell(author: book.authorName,title: book.bookName,rank: book.rank)
       
         return cell
             
@@ -102,7 +102,7 @@ class MainViewController: UIViewController,UITableViewDataSource,UITableViewDele
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     
     
-        self.performSegue(withIdentifier: "showBookDetails", sender: indexPath);
+        self.performSegue(withIdentifier: "loadBook", sender: indexPath);
         
     }
     
@@ -112,17 +112,18 @@ class MainViewController: UIViewController,UITableViewDataSource,UITableViewDele
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         
-        if(segue.identifier == "showBookDetails"){
+        if(segue.identifier == "loadBook"){
             
             
-            let destinationVC = segue.destination as! BookDetailsViewController
-                let row = (sender as! NSIndexPath).row
+            let destinationVC = segue.destination as! LoadViewController
+                let row = self.bookListTableView.indexPathForSelectedRow?.row
             
-                let book = self.bookArray[row]
+            let book = self.bookArray[row!]
             
                 destinationVC.book_title = book.bookName
                 destinationVC.book_author = book.authorName
                 destinationVC.book_description = book.description
+                destinationVC.book_isbn = book.isbn
             
             
             
@@ -152,7 +153,7 @@ class MainViewController: UIViewController,UITableViewDataSource,UITableViewDele
                                for book in results {
                                 
                                         let oneBook = BookAPI(bookDetails: book)
-                                let bookVar = BookDetailModel(bName: oneBook.bookTitle, aName: oneBook.author,rank: oneBook.rank,image: "")
+                                let bookVar = BookDetailModel(bName: oneBook.bookTitle, aName: oneBook.author,rank: oneBook.rank,isbn: oneBook.isbn,des: oneBook.description)
                                         self.bookArray.append(bookVar)
                                         self.bookListTableView.reloadData()
                                 

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class BookDetailsViewController: UIViewController {
     
@@ -14,19 +15,28 @@ class BookDetailsViewController: UIViewController {
     var imageURL: String!
     var book_description: String!
     var book_title: String!
+    var book_author: String!
     
     
-
+    @IBOutlet weak var bookCover: UIImageView!
+    @IBOutlet weak var bookTitleLabel: UILabel!
+    @IBOutlet weak var bookDesLabel: UILabel!
+    @IBOutlet weak var authorLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+       
+        
+        bookCover.sd_setImage(with: URL(string: self.imageURL), completed: nil)
+        bookTitleLabel.text = self.book_title
+        bookDesLabel.text = self.book_description
+        authorLabel.text = "by - \(self.book_author!)"
+        
         
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        
-    }
+    
     
 
   
