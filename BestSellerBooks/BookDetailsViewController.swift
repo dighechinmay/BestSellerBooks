@@ -16,12 +16,16 @@ class BookDetailsViewController: UIViewController {
     var book_description: String!
     var book_title: String!
     var book_author: String!
+    var amazon: String!
+    var review: String!
     
     
     @IBOutlet weak var bookCover: UIImageView!
     @IBOutlet weak var bookTitleLabel: UILabel!
     @IBOutlet weak var bookDesLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
+    @IBOutlet weak var buyButton: UIButton!
+    @IBOutlet weak var reviewButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,9 +37,38 @@ class BookDetailsViewController: UIViewController {
         bookDesLabel.text = self.book_description
         authorLabel.text = "by - \(self.book_author!)"
         
+        if(self.review! == ""){
+            
+            self.reviewButton.isHidden = true
+        }
+       
+        
+        if(self.amazon! == ""){
+            
+             self.buyButton.isHidden = true
+        }
+       
+        
         
     }
 
+    
+    
+    @IBAction func buy(_ sender: Any) {
+        
+       UIApplication.shared.openURL(URL(string: self.amazon!)!)
+       
+    }
+    
+    
+    
+    
+    @IBAction func review(_ sender: Any) {
+        
+        UIApplication.shared.openURL(URL(string: self.review!)!)
+        
+    }
+    
     
     
 

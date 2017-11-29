@@ -20,6 +20,8 @@ class BookAPI {
     var _bookCoverURL: String!
     var _rank: Int!
     var _weekOnList: Int!
+    var _amazonURL: String!
+    var _nytimesURL: String!
     
     var book: BookDetailModel!
     
@@ -99,6 +101,30 @@ class BookAPI {
         
     }
     
+    var amazonURL: String {
+        
+        if _amazonURL == nil {
+            
+            return ""
+            
+        }
+        
+        return _amazonURL
+        
+    }
+    
+    var nytimeURL: String {
+        
+        if _nytimesURL == nil {
+            
+            return ""
+            
+        }
+        
+        return _nytimesURL
+        
+    }
+    
     
     
     init(bookDetails: Dictionary<String,AnyObject>){
@@ -137,6 +163,14 @@ class BookAPI {
                     
                 }
                 
+                if let amazon = result["amazon_product_url"] as? String {
+                    
+                    
+                    self._amazonURL = amazon
+                    
+                    
+                }
+                
                 
                 if let bookDetails = result["book_details"] as? [Dictionary<String,AnyObject>] {
                     
@@ -161,9 +195,22 @@ class BookAPI {
                         self._author = book_author
                         //print(self._author)
                     }
+     
                     
-                    
+                }
                 
+                
+                if let reviews = result["reviews"] as? [Dictionary<String,AnyObject>] {
+                    
+                    
+                    if let rev_link = reviews[0]["book_review_link"] as? String {
+                        
+                            self._nytimesURL = rev_link
+                            print(_nytimesURL)
+                        
+                    }
+                    
+                    
                     
                     
                 }

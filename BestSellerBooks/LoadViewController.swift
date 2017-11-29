@@ -16,6 +16,8 @@ class LoadViewController: UIViewController {
     var book_author: String!
     var book_description: String!
     var book_isbn: String!
+    var amazon: String!
+    var review: String!
     
     
 
@@ -52,6 +54,8 @@ class LoadViewController: UIViewController {
                         destinationVC.book_description = self.book_description!
                         destinationVC.book_title = self.book_title
                         destinationVC.book_author = self.book_author
+                        destinationVC.amazon = self.amazon
+                        destinationVC.review = self.review
                 
                 
                 if let navigator = self.navigationController {

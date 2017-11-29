@@ -21,9 +21,11 @@ class BookDetailModel {
     var isbn: String!
     var description: String!
     var wol: Int!
+    var amazon: String!
+    var nytimes: String!
     
     
-    init(bName: String,aName: String!,rank: Int,isbn: String,des: String,wol: Int){
+    init(bName: String,aName: String!,rank: Int,isbn: String,des: String,wol: Int,amazon: String,nytimes: String){
         
             self.bookName = bName
             self.authorName = aName
@@ -31,6 +33,8 @@ class BookDetailModel {
             self.rank = rank
             self.description = des
             self.wol = wol
+            self.amazon = amazon
+            self.nytimes = nytimes
     }
     
     

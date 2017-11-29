@@ -19,7 +19,7 @@ class MainViewController: UIViewController,UITableViewDataSource,UITableViewDele
 
     var bookData: BookDetailModel!
     var bookArray = [BookDetailModel]()
-    var bookArray1 = [BookDetailModel]()
+
     var flag = true
 
     override func viewDidLoad() {
@@ -40,9 +40,13 @@ class MainViewController: UIViewController,UITableViewDataSource,UITableViewDele
         return 1
     }
     
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
+            return "Hardcover Fiction"
+    }
   
     
-  func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+ /* func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
     
     if let cell = tableView.dequeueReusableCell(withIdentifier: "headerCell") as? HeaderTableViewCell {
     
@@ -57,7 +61,7 @@ class MainViewController: UIViewController,UITableViewDataSource,UITableViewDele
     }
     
     
-    }
+    }*/
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 40
@@ -156,6 +160,8 @@ class MainViewController: UIViewController,UITableViewDataSource,UITableViewDele
                 destinationVC.book_author = book.authorName
                 destinationVC.book_description = book.description
                 destinationVC.book_isbn = book.isbn
+                destinationVC.amazon = book.amazon
+                destinationVC.review = book.nytimes
             
             
             
@@ -210,7 +216,7 @@ class MainViewController: UIViewController,UITableViewDataSource,UITableViewDele
                                for book in results {
                                 
                                         let oneBook = BookAPI(bookDetails: book)
-                                let bookVar = BookDetailModel(bName: oneBook.bookTitle, aName: oneBook.author,rank: oneBook.rank,isbn: oneBook.isbn,des: oneBook.description,wol: oneBook.weekOnList)
+                                let bookVar = BookDetailModel(bName: oneBook.bookTitle, aName: oneBook.author,rank: oneBook.rank,isbn: oneBook.isbn,des: oneBook.description,wol: oneBook.weekOnList,amazon: oneBook.amazonURL,nytimes: oneBook.nytimeURL)
                                         self.bookArray.append(bookVar)
                                         self.bookListTableView.reloadData()
                                 
