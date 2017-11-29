@@ -1,25 +1,34 @@
 //
-//  ViewController.swift
+//  BookDetailsViewController.swift
 //  BestSellerBooks
 //
-//  Created by Chinmay Dighe on 11/28/17.
+//  Created by Chinmay Dighe on 11/29/17.
 //  Copyright © 2017 chinmaydighe. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class BookDetailsViewController: UIViewController {
+    
+    
+    var imageURL: String!
+    var book_description: String!
+    var book_title: String!
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
     }
+    
 
+  
 
 }
-
