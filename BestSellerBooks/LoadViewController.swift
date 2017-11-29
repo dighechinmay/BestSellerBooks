@@ -34,7 +34,7 @@ class LoadViewController: UIViewController {
     }
 
    
-    
+    //pulls the book cover from the google api
     
     func downloadBookCover(){
         
@@ -63,20 +63,10 @@ class LoadViewController: UIViewController {
                     navigator.pushViewController(destinationVC, animated: true)
                 }
                 
-                
             }
-            
-            
-    
             
         }
         
-        
-        
-        
-        
     }
-
-   
 
 }

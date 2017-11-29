@@ -30,6 +30,7 @@ class BookDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // hides the back arrow and shows 'back' instead
         self.navigationItem.hidesBackButton = true
         let newBackButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(BookDetailsViewController.back(sender:)))
         self.navigationItem.leftBarButtonItem = newBackButton
@@ -43,7 +44,6 @@ class BookDetailsViewController: UIViewController {
             
             self.reviewButton.isHidden = true
         }
-       
         
         if(self.amazon! == ""){
             
@@ -56,8 +56,7 @@ class BookDetailsViewController: UIViewController {
     
     @objc func back(sender: UIBarButtonItem) {
         
-        let vC =
-        
+        //jumps to the root VC
         _ = navigationController?.popToRootViewController(animated: true)
     }
 
@@ -77,10 +76,6 @@ class BookDetailsViewController: UIViewController {
         UIApplication.shared.openURL(URL(string: self.review!)!)
         
     }
-    
-    
-    
 
-  
 
 }

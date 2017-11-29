@@ -44,24 +44,7 @@ class MainViewController: UIViewController,UITableViewDataSource,UITableViewDele
         
             return "Hardcover Fiction"
     }
-  
-    
- /* func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-    
-    if let cell = tableView.dequeueReusableCell(withIdentifier: "headerCell") as? HeaderTableViewCell {
-    
-        cell.configureHeaderCell(headerName: "Hardcore Fiction")
-        
-        return cell
-    }
-    else{
-        
-        return HeaderTableViewCell()
-        
-    }
-    
-    
-    }*/
+ 
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 40
@@ -197,7 +180,7 @@ class MainViewController: UIViewController,UITableViewDataSource,UITableViewDele
     
     
     
-    
+    // download data from the API request
     
     func  downloadBookData(){
         
@@ -208,8 +191,6 @@ class MainViewController: UIViewController,UITableViewDataSource,UITableViewDele
                     
                     
                     if let books = response.value as? Dictionary<String,AnyObject> {
-                        
-                        
                         
                           if let results = books["results"] as? [Dictionary<String,AnyObject>] {
                             

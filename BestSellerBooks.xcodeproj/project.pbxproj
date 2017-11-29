@@ -18,7 +18,6 @@
 		828F68BB1FCDFEAC0059B8A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 828F68B91FCDFEAC0059B8A6 /* Main.storyboard */; };
 		828F68BD1FCDFEAC0059B8A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 828F68BC1FCDFEAC0059B8A6 /* Assets.xcassets */; };
 		828F68C01FCDFEAC0059B8A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 828F68BE1FCDFEAC0059B8A6 /* LaunchScreen.storyboard */; };
-		828F68CD1FCE04D80059B8A6 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828F68CC1FCE04D80059B8A6 /* HeaderTableViewCell.swift */; };
 		828F68CF1FCE04F00059B8A6 /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828F68CE1FCE04F00059B8A6 /* BookTableViewCell.swift */; };
 		AF5305AAF51ECF1F81696386 /* Pods_BestSellerBooks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 037F63D7B53034AA9D120905 /* Pods_BestSellerBooks.framework */; };
 /* End PBXBuildFile section */
@@ -40,7 +39,6 @@
 		828F68BC1FCDFEAC0059B8A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		828F68BF1FCDFEAC0059B8A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		828F68C11FCDFEAC0059B8A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		828F68CC1FCE04D80059B8A6 /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
 		828F68CE1FCE04F00059B8A6 /* BookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,7 +103,6 @@
 		828F68C71FCE019A0059B8A6 /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
-				828F68CC1FCE04D80059B8A6 /* HeaderTableViewCell.swift */,
 				828F68CE1FCE04F00059B8A6 /* BookTableViewCell.swift */,
 			);
 			path = TableViewCells;
@@ -265,7 +262,6 @@
 				824274D31FCE15EE008EFE15 /* BookAPI.swift in Sources */,
 				824274DB1FCED589008EFE15 /* BookDetailsViewController.swift in Sources */,
 				828F68B81FCDFEAC0059B8A6 /* MainViewController.swift in Sources */,
-				828F68CD1FCE04D80059B8A6 /* HeaderTableViewCell.swift in Sources */,
 				828F68B61FCDFEAC0059B8A6 /* AppDelegate.swift in Sources */,
 				824274D91FCE56E8008EFE15 /* BookDetailModel.swift in Sources */,
 				824274D51FCE188E008EFE15 /* Constants.swift in Sources */,

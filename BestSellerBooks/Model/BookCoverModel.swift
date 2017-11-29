@@ -35,9 +35,6 @@ class BookCoverModel {
     
     
     init(coverDetails: Dictionary<String,AnyObject>){
-    
-    
-        
         
         if  let items = coverDetails["items"] as? [Dictionary<String,AnyObject>] {
          
@@ -52,34 +49,15 @@ class BookCoverModel {
                     if let url = imageLinks["smallThumbnail"] as? String {
                         
                                 self._imageURL = url
-                            
-                        
                         
                     }
                     
-                    
-                    
                 }
-                
-                
-                
+            
                 
             }
             
-            
-            
-            
         }
     
-    
-    
-    
-    
-    
     }
-    
-    
-    
-    
-    
 }
